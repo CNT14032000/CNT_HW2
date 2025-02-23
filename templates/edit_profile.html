@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html leng="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit profile</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style_editprofile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="/static/images/{{user.profile_picture}}" alt="profile picture">
+                <div class="overlay">
+                    <form action="{{ url_for('upload_profile_picture') }}" method="post" enctype="multipart/form-data">
+                        <input type="file" name="profile_picture" accept="image/*" onchange="this.form.submit()">
+                        <i class="fa fa-camera"></i>
+                        <div class="message">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages and 'successful' in messages[0] %}
+                                {% else  %}
+                                    <p style="color: red">{{ messages[0] }}</p>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <h1>{{user.username}}</h1>
+        </div>
+
+        <div class="personal-info">
+            <h2>Edit Profile</h2>
+            <div class="info-list">
+                <form method="POST", action='/edit_profile'>
+                    <div class="info-item">
+                        <label for = "fullname">Full Name</label>
+                        <div class="info-field">
+                            <input name = "fullname" type = "text" class = "edit_info" value={{user.fullname}}> 
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <label for ="email">Email</label>
+                        <div class="info-field">   
+                            <input name = "email" type = "text" class = "edit_info" value= {{user.email}}>  
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <label for = "phone">Phone</label>
+                        <div class="info-field">   
+                            <input name = "phone" type = "text" class = "edit_info" value={{user.phone}}> 
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <label for = "birthday">Birthday</label>
+                        <div class="info-field">    
+                            <input name = "birthday" type = "date" class = "edit_info" value={{user.birthday}}> 
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <label for ="profession">Profession</label>
+                        <div class="info-field">
+                            <input name = "profession" type = "text" class = "edit_info" value={{user.profession}}>
+                    </div>
+                    <div class="message">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages and 'successful' in messages[0] %}
+                                <p style="color: green">{{ messages[0] }}</p>
+                            {% else  %}
+                                <p style="color: red">{{ messages[0] }}</p>
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <button type="submit" class="update-button">Update Profile</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

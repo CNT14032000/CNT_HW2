@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html leng="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's profile</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style_profile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="/static/images/{{user.profile_picture}}" alt="profile picture">
+            </div>
+            <h1>{{user.username}}</h1>
+        </div>
+
+        <div class="personal-info">
+            <h2>Personal Information</h2>
+            <div class="info-list">
+                <div class="info-item">
+                    <div>
+                        <label>Full Name</label>
+                        <p>{{user.fullname}}</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <label>Email</label>
+                        <p>{{user.email}}</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <label>Phone</label>
+                        <p>{{user.phone}}</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <label>birthday</label>
+                        <p>{{user.birthday}}</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <label>Profession</label>
+                        <p>{{user.profession}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="/edit_profile">
+                <button class="edit">Edit Profile</button>
+            </a>
+            <a href="/change_password">
+                <button class="change">Change Password</button>
+            </a>
+        </div>
+
+        <div class="logout-section">
+            <a href="/logout">
+                <button class="logout-button">
+                    <i class="fa fa-sign-out"></i>
+                    Logout
+                </button>
+            </a>
+        </div>
+    </div>
+
+    </div>
+</body>

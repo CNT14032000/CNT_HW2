@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ea4904b3-3aff-4e88-9bcb-e0b9a0a4c16b)# CNT_HW2
+# CNT_HW2
 I did my homework 2 by writing a web application with features like authentication that allows users to log in and redirects to a profile page for each user, allowing users to create accounts and the profile will be displayed with data related to each account. Implemented password hashing using Bcrypt and allowed logout to change password, also the site allows users to update their profile information and avatar. All data is stored in Mongodb.
 ## Basic part:
 Implement authentication feature   

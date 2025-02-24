@@ -27,4 +27,32 @@ hashed_password = bcrypt.generate_password_hash(new_password).decode('utf-8')
 * User change password feature click this button on the profile page, then the website is redirected to the password change page where the user can change the password and update his password. After successful the user needs to log in again to enter the profile page.</br>
 ![data base image](static/images/change_password.PNG) </br>
 ### 2.3 Allow users to update profile picture (new user will have a default profile picture) 
+Users can update their avatar on the edit_profile page, otherwise it will be uploaded by default when entering the profile page.</br>
+* Personal page without updated information and avatar.</br>
+![data base image](static/images/default_profile.PNG) </br>
+* Image update code. </br>
+![data base image](static/images/upload_picture.PNG) </br>
+### 2.4 Allow users to update profile information
+Users can update profile information at edit_profile page.</br>
+![data base image](static/images/edit_profile.PNG) </br>
 
+## Technologies used
+* HTML/CSS: For the frontend interface.
+* Flask: A web application framework used for backend processing.
+* MongoDB: A NoSQL database for storing user and session data.
+* Flask-Bcrypt: For securely hashing passwords.
+* Session: Used to store and manage user information when logging into the website.
+* JavaScript: Performs some user interaction functions.
+  
+## How to run
+1. Clone the Repository:
+git clone https://github.com/itmo-wad/CaoNgocTuan-hw2.git
+2. Navigate to the Project Directory:
+cd [project directory name]
+3. Install Dependencies:
+pip install Flask pymongo bcrypt
+4. Database Setup:
+Ensure MongoDB is running on your local machine
+5. Run the Application:
+py app.py
+6. Access the application: Open your web browser and navigate to http://localhost:5000 (or the address shown in terminal).
